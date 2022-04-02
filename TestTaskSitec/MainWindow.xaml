@@ -1,0 +1,47 @@
+﻿<Window x:Class="TestTaskSitec.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTaskSitec"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Открыть" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="94" Click="Button_Click_OpenRKK"/>
+                <TextBlock x:Name="TextBlock_PathRKK" Text="Файл РКК:" Margin="5" FontSize="14"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Открыть" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="94" Click="Button_Click_OpenAppeals"/>
+                <TextBlock x:Name="TextBlock_PathAppeals" Text="Файл Обращений:" Margin="5" FontSize="14"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Вывести" HorizontalAlignment="Left" Margin="5" VerticalAlignment="Top" Width="94" Click="Button_Click_LoadTable"/>
+                <Button Content="Сохранить как" HorizontalAlignment="Right" Margin="5" VerticalAlignment="Center" Width="94" Click="Button_Click_Save"/>
+            </StackPanel>
+            <TextBlock x:Name="runTime" Text="Время выполнения: " Margin="5" FontSize="14"/>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Сортировать по: " Margin="5" FontSize="14"/>
+                <!--<Button Content="ФИО" Click="Button_SortByFullName" Margin="5" Width="80"/>
+                <Button Content="РКК" Click="Button_SortByRKK" Margin="5" Width="80"/>
+                <Button Content="Обращениям" Click="Button_SortByAppeals" Margin="5" Width="80"/>-->
+                <!--<Button Content="Общее" Click="Button_SortByRKKAndAppeals" Margin="5" Width="80"/>-->
+                <ComboBox Name="SortingList" Width="120" VerticalAlignment="Top" Margin="5" SelectionChanged="SortingList_SelectionChanged">
+                    <TextBlock Name="SortByFullName">по фамилии ответственного исполнителя</TextBlock>
+                    <TextBlock Name="SortByRKK">по количеству РКК</TextBlock>
+                    <TextBlock Name="SortByAppeals">по количеству обращений</TextBlock>
+                    <TextBlock Name="SortByRKKAndAppeals">по общему количеству документов</TextBlock>
+                </ComboBox>
+            </StackPanel>
+            <TextBlock Text="Справка о неисполненных документах и обращениях граждан" FontSize="16" FontWeight="Bold" TextAlignment="Center" Margin="10"/>
+            <TextBlock x:Name="total" Text="Не исполнено в срок 0 документов, из них:" Margin="5" FontSize="14"/>
+            <TextBlock x:Name="totalRKK" Text="- количество неисполненных входящих документов: 0;" Margin="5" FontSize="14"/>
+            <TextBlock x:Name="totalAppeals" Text="- количество неисполненных письменных обращений граждан: 0." Margin="5" FontSize="14"/>
+            <TextBlock x:Name="sortedType" Text="Сортировка: " Margin="5" FontSize="14"/>
+            <DataGrid x:Name="DataGrid_ResultTable" Height="270" Width="Auto" Margin="5" ColumnWidth ="150"  LoadingRow="DataGrid_ResultTable_LoadingRow"></DataGrid>
+            <TextBlock x:Name="dateOfCompilation" Text ="Дата составления справки: "  Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>

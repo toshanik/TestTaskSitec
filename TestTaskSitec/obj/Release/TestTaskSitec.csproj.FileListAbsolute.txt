@@ -1,0 +1,16 @@
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\bin\Release\TestTaskSitec.exe.config
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\bin\Release\TestTaskSitec.exe
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\bin\Release\TestTaskSitec.pdb
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.csproj.AssemblyReference.cache
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.csproj.SuggestedBindingRedirects.cache
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\MainWindow.g.cs
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\App.g.cs
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec_MarkupCompile.cache
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec_MarkupCompile.lref
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\MainWindow.baml
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.g.resources
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.Properties.Resources.resources
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.csproj.GenerateResource.cache
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.exe
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Release\TestTaskSitec.pdb
