@@ -14,9 +14,8 @@ namespace TestTaskSitec
         private Dictionary<string, CounterRKKAndAppeals> executorsTable = null;
         private string[] RKK = null;
         private string[] Appeals = null;
-        private string pathRKK = "";
-        private string pathAppeals = "";
-
+        private string pathRKK = null;
+        private string pathAppeals = null;
         private Executors[] executors = null;
 
         public MainWindow()
@@ -124,15 +123,14 @@ namespace TestTaskSitec
 
             DataGrid_ResultTable.ItemsSource = executors;
 
-            DataGrid_ResultTable.Columns[0].Header = "Ответственный исполнитель";
-            DataGrid_ResultTable.Columns[1].Header = "Количество неисполненных входящих документов";
-            DataGrid_ResultTable.Columns[2].Header = "Количество неисполненных письменных обращений граждан";
-            DataGrid_ResultTable.Columns[3].Header = "Общее количество документов и обращений";
-
+            DataGrid_ResultTable.Columns[0].Header = "Ответственный \nисполнитель";
+            DataGrid_ResultTable.Columns[1].Header = "Количество неисполненных \nвходящих документов";
+            DataGrid_ResultTable.Columns[2].Header = "Количество неисполненных \nписьменных обращений \nграждан";
+            DataGrid_ResultTable.Columns[3].Header = "Общее количество \nдокументов и обращений";
         }
         private void Button_Click_LoadTable(object sender, RoutedEventArgs e)
         {
-            if (pathRKK == "" || pathAppeals == "")
+            if (pathRKK == null || pathAppeals == null)
             {
                 MessageBox.Show("Не все файлы выбраны!");
                 return;
@@ -146,12 +144,16 @@ namespace TestTaskSitec
             ProcessFile(executorsTable, RKK, "RKK");
             ProcessFile(executorsTable, Appeals, "Appeals");
 
+            int fullSumRKK = executorsTable.Sum(p => p.Value.counterRKK);
+            int fullSumAppeals = executorsTable.Sum(p => p.Value.counterAppeals);
+            int fullSumRKKAndAppeals = fullSumRKK + fullSumAppeals;
+
             stopWatch.Stop();
 
             runTime.Text = $"Время выполнения: {stopWatch.ElapsedMilliseconds} мс";
-            total.Text = $"Не исполнено в срок {executorsTable.Sum(p => p.Value.counterRKK + p.Value.counterAppeals)} документов, из них:";
-            totalRKK.Text = $"- количество неисполненных входящих документов: {executorsTable.Sum(p => p.Value.counterRKK)};";
-            totalAppeals.Text = $"- количество неисполненных письменных обращений граждан: {executorsTable.Sum(p => p.Value.counterAppeals)}.";
+            total.Text = $"Не исполнено в срок {fullSumRKKAndAppeals} документов, из них:";
+            totalRKK.Text = $"- количество неисполненных входящих документов: {fullSumRKK};";
+            totalAppeals.Text = $"- количество неисполненных письменных обращений граждан: {fullSumAppeals}.";
             dateOfCompilation.Text = $"Дата составления справки: {DateTime.Now.ToShortDateString()}";
 
             executors = executorsTable.Select(
@@ -174,7 +176,7 @@ namespace TestTaskSitec
 
         private void Button_Click_Save(object sender, RoutedEventArgs e)
         {
-            if(executors == null)
+            if (executors == null)
             {
                 MessageBox.Show("Таблица пустая!");
                 return;
@@ -185,12 +187,19 @@ namespace TestTaskSitec
             {
                 using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, false))
                 {
+                    writer.WriteLine("Справка о неисполненных документах и обращениях граждан\n");
+                    writer.WriteLine(total.Text);
+                    writer.WriteLine(totalRKK.Text);
+                    writer.WriteLine(totalAppeals.Text);
+                    writer.WriteLine(sortedType.Text);
+                    writer.WriteLine();
                     writer.WriteLine("{0,4} |{1,22} |{2,12} |{3,18} |{4,14} |", "№", "Исполнитель", "Кол-во РКК", "Кол-во обращений", "Общее кол-во");
                     for (int i = 0; i < executors.Length; i++)
                     {
                         writer.WriteLine("{0,4} |{1,22} |{2,12} |{3,18} |{4,14} |", i, executors[i].executor, executors[i].countRKK, executors[i].countAppeals, executors[i].countRKK + executors[i].countAppeals);
 
                     }
+                    writer.WriteLine(dateOfCompilation.Text);
                 }
             }
         }

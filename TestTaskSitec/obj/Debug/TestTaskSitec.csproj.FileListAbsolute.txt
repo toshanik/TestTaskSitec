@@ -45,3 +45,4 @@ C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj
 C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Debug\TestTaskSitec.csproj.CoreCompileInputs.cache
 C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Debug\TestTaskSitec.exe
 C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Debug\TestTaskSitec.pdb
+C:\Users\Anton\Desktop\Ситэк\TestTaskSitec2\TestTaskSitec\TestTaskSitec\obj\Debug\TestTaskSitec.csproj.ResolveComReference.cache

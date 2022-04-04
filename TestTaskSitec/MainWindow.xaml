@@ -40,7 +40,7 @@
             <TextBlock x:Name="totalRKK" Text="- количество неисполненных входящих документов: 0;" Margin="5" FontSize="14"/>
             <TextBlock x:Name="totalAppeals" Text="- количество неисполненных письменных обращений граждан: 0." Margin="5" FontSize="14"/>
             <TextBlock x:Name="sortedType" Text="Сортировка: " Margin="5" FontSize="14"/>
-            <DataGrid x:Name="DataGrid_ResultTable" Height="270" Width="Auto" Margin="5" ColumnWidth ="150"  LoadingRow="DataGrid_ResultTable_LoadingRow"></DataGrid>
+            <DataGrid  x:Name="DataGrid_ResultTable"   Height="270" Width="Auto" Margin="5" ColumnWidth ="170"  LoadingRow="DataGrid_ResultTable_LoadingRow"></DataGrid>
             <TextBlock x:Name="dateOfCompilation" Text ="Дата составления справки: "  Margin="5"/>
         </StackPanel>
     </Grid>
