@@ -44,7 +44,7 @@ namespace TestTaskSitec
             if (openFileDialog.ShowDialog() == true)
             {
                 pathRKK = openFileDialog.FileName;
-                TextBlock_PathRKK.Text = "Файл РКК: " + openFileDialog.SafeFileName ;
+                TextBlock_PathRKK.Text = "Файл РКК: " + openFileDialog.SafeFileName;
             }
         }
 
@@ -79,7 +79,7 @@ namespace TestTaskSitec
                 if (executorsTable.ContainsKey(executor))
                 {
                     CounterRKKAndAppeals value = executorsTable[executor];
-                    if(type == "RKK")
+                    if (type == "RKK")
                         value.counterRKK++;
                     else
                         value.counterAppeals++;
