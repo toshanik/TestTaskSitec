@@ -187,16 +187,23 @@ namespace TestTaskSitec
             {
                 using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, false))
                 {
+                    DataGrid_ResultTable.Columns[0].Header = "Ответственный \nисполнитель";
+                    DataGrid_ResultTable.Columns[1].Header = "Количество неисполненных \nвходящих документов";
+                    DataGrid_ResultTable.Columns[2].Header = "Количество неисполненных \nписьменных обращений \nграждан";
+                    DataGrid_ResultTable.Columns[3].Header = "Общее количество \nдокументов и обращений";
+
                     writer.WriteLine("Справка о неисполненных документах и обращениях граждан\n");
                     writer.WriteLine(total.Text);
                     writer.WriteLine(totalRKK.Text);
                     writer.WriteLine(totalAppeals.Text);
                     writer.WriteLine(sortedType.Text);
                     writer.WriteLine();
-                    writer.WriteLine("{0,4} |{1,22} |{2,12} |{3,18} |{4,14} |", "№", "Исполнитель", "Кол-во РКК", "Кол-во обращений", "Общее кол-во");
+                    writer.WriteLine("{0,4} |{1,22} |{2,28} |{3,24} |{4,23} |", "№", "Ответственный", "Количество неисполненных", "Количество неисполненных", "Общее количество");
+                    writer.WriteLine("{0,4} |{1,22} |{2,28} |{3,24} |{4,23} |", "", "исполнитель", "входящих документов граждан", "письменных обращений", "документов и обращений");
+                    writer.WriteLine("----------------------------------------------------------------------------------------------------------------");
                     for (int i = 0; i < executors.Length; i++)
                     {
-                        writer.WriteLine("{0,4} |{1,22} |{2,12} |{3,18} |{4,14} |", i, executors[i].executor, executors[i].countRKK, executors[i].countAppeals, executors[i].countRKK + executors[i].countAppeals);
+                        writer.WriteLine("{0,4} |{1,22} |{2,28} |{3,24} |{4,23} |", i, executors[i].executor, executors[i].countRKK, executors[i].countAppeals, executors[i].countRKK + executors[i].countAppeals);
 
                     }
                     writer.WriteLine(dateOfCompilation.Text);
