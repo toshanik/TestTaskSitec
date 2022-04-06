@@ -187,11 +187,6 @@ namespace TestTaskSitec
             {
                 using (StreamWriter writer = new StreamWriter(saveFileDialog.FileName, false))
                 {
-                    DataGrid_ResultTable.Columns[0].Header = "Ответственный \nисполнитель";
-                    DataGrid_ResultTable.Columns[1].Header = "Количество неисполненных \nвходящих документов";
-                    DataGrid_ResultTable.Columns[2].Header = "Количество неисполненных \nписьменных обращений \nграждан";
-                    DataGrid_ResultTable.Columns[3].Header = "Общее количество \nдокументов и обращений";
-
                     writer.WriteLine("Справка о неисполненных документах и обращениях граждан\n");
                     writer.WriteLine(total.Text);
                     writer.WriteLine(totalRKK.Text);
@@ -203,7 +198,7 @@ namespace TestTaskSitec
                     writer.WriteLine("----------------------------------------------------------------------------------------------------------------");
                     for (int i = 0; i < executors.Length; i++)
                     {
-                        writer.WriteLine("{0,4} |{1,22} |{2,28} |{3,24} |{4,23} |", i, executors[i].executor, executors[i].countRKK, executors[i].countAppeals, executors[i].countRKK + executors[i].countAppeals);
+                        writer.WriteLine("{0,4} |{1,22} |{2,28} |{3,24} |{4,23} |", i+1, executors[i].executor, executors[i].countRKK, executors[i].countAppeals, executors[i].countRKK + executors[i].countAppeals);
 
                     }
                     writer.WriteLine(dateOfCompilation.Text);
